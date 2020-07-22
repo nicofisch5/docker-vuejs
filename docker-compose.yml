@@ -4,7 +4,7 @@ services:
   #Nginx Service
   webserver:
     image: nginx:alpine
-    container_name: radama-nginx
+    container_name: XXXXXXX-nginx
     restart: unless-stopped
     tty: true
     expose:
@@ -16,10 +16,10 @@ services:
       - proxy
     labels:
       traefik.enable: true
-      traefik.http.routers.nginx.rule: Host(`${APP_DOMAIN_NAME}`) # indique à Traefik que le Host de la requête doit être 'xxx.xxx.xxx'
-      traefik.http.routers.nginx.entrypoints: http # indique à Traefik que la route n'écoute que l'entrypoint 'web' (port 80)
-      traefik.http.routers.nginx-http.service: nginx-http # associe la route au service qu'on crée en dessous 'traefik.http.services.sample-http.loadBalancer.server.port=80'
-      traefik.http.services.nginx-http.loadBalancer.server.port: 80 # on indique au service de transférer la requête sur le port 80 du container
+      traefik.http.routers.vuejs-radama.rule: Host(`${APP_DOMAIN_NAME}`) # indique à Traefik que le Host de la requête doit être 'xxx.xxx.xxx'
+      traefik.http.routers.vuejs-radama.entrypoints: http # indique à Traefik que la route n'écoute que l'entrypoint 'web' (port 80)
+      traefik.http.routers.vusjs-radama-http.service: vuejs-radama-http # associe la route au service qu'on crée en dessous 'traefik.http.services.sample-http.loadBalancer.server.port=80'
+      traefik.http.services.vuejs-radama-http.loadBalancer.server.port: 80 # on indique au service de transférer la requête sur le port 80 du container
 
 networks:
   proxy:
