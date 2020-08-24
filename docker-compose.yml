@@ -4,7 +4,7 @@ services:
   #Nginx Service
   webserver:
     image: nginx:alpine
-    container_name: XXXXXXX-nginx
+    container_name: front-radama-nginx
     restart: unless-stopped
     tty: true
     expose:
